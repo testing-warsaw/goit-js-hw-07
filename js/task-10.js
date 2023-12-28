@@ -11,8 +11,9 @@ const inputForm = controlPanel.querySelector("input")
 const btnCreate = controlPanel.querySelector("button[data-create]")
 const btnDelete = controlPanel.querySelector("button[data-destroy]")
 
-function createBoxes(amount) {
+function createBoxes() {
   let sizeBox = 30
+  let amount = inputForm.value
 
   for(let i = 0; i < amount; i++){
     
@@ -29,10 +30,10 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-   boxesPlace.remove()
+   boxesPlace.innerHTML =""
  };
 
-btnCreate.addEventListener("click", () => createBoxes(inputForm.value))
+btnCreate.addEventListener("click", createBoxes)
 btnDelete.addEventListener("click", destroyBoxes)
 
 
